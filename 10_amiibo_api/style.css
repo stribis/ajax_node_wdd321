@@ -1,0 +1,139 @@
+/* Small Reset */
+*::before, *::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(rgb(255, 105, 105), rgb(255, 27, 156));
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: white;
+}
+h1 {
+  text-shadow: 2px 2px 2px black;
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+header {
+  color: white;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header p {
+  background: black;
+  padding: 0.3rem 1rem;
+}
+
+.search input {
+  padding: 0.3rem 0.5rem;
+  margin-top: 2rem;
+  border: solid 1px white;
+  background: transparent;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.4rem;
+}
+
+
+
+ul.gameseries { 
+  position: relative;
+  margin: 3rem 15rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.gameseries > li {
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.226);
+  height: 42px;
+  text-align: center;
+  color: white;
+  border: solid 1px white;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameseries > li:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.181);
+}
+
+.amiibos {
+  padding: 5rem;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: purple;
+  /* width: 80vw; */
+  /* display: none; */
+  gap: 0.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  /* position: absolute; */
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+.amiibos.show{
+  display:grid;
+}
+
+.amiibos figure > div {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 2rem;
+}
+
+.amiibos img {
+  width: auto;
+  height: 100%;
+}
+
+.amiibos figure {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px white;
+  padding: 1rem;
+}
+
+.amiibos figure ul {
+  list-style: none;
+}
+.amiibos:not(.show) + .close {
+  display: none;
+}
+
+.amiibos.show + .close {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  color: white;
+  font-size: 3rem;
+  transition: 0.33s;
+}
+
+.amiibos.show + .close:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}

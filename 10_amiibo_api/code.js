@@ -28,4 +28,51 @@ function showGames (data) {
     // Insert Li to DOM
     document.querySelector('.gameseries').appendChild(li)
   })
+
+  getAmiibos()
+
+}
+
+
+function getAmiibos () {
+  // Getting Amiibos
+  // Click event for all the li's
+  const listItems = document.querySelectorAll('.gameseries > li')
+  listItems.forEach(item => {
+    item.addEventListener('click', async e => {
+      console.log(item.innerText)
+
+      const response = await fetch(`https://www.amiiboapi.com/api/amiibo/?gameseries=${item.innerText}`)
+      const data = await response.json()
+
+      console.log(data)
+      showAmiibos(data)
+    })
+  })
+}
+
+function showAmiibos (data) {
+  document.querySelector('.amiibos').innerHTML = ''
+  data.amiibo.forEach( amiibo => {
+    const div = document.createElement('div')
+
+    const template = `
+    <figure>
+      <div>
+        <img src="${amiibo.image}" alt="${amiibo.character}">
+      </div>
+      <figcaption>
+        <ul>
+          <li>Name: ${amiibo.character}</li>
+          <li>Game Series: ${amiibo.gameSeries}</li>
+          <li>Amiibo Series: ${amiibo.amiiboSeries}</li>
+          <li>Type: ${amiibo.type}</li>
+        </ul>
+      </figcaption>
+    </figure>
+    `
+
+    div.innerHTML = template
+    document.querySelector('.amiibos').appendChild(div)
+  })
 }
