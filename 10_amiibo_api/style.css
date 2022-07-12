@@ -80,14 +80,15 @@ ul.gameseries {
   min-width: 100vw;
   min-height: 100vh;
   background: purple;
-  /* width: 80vw; */
-  /* display: none; */
+  width: 80vw;
+  display: none;
   gap: 0.5rem;
   grid-template-columns: repeat(4, 1fr);
-  /* position: absolute; */
+  position: absolute;
   z-index: 2;
   top: 0;
   left: 0;
+  ;
 }
 
 .amiibos.show{
@@ -96,9 +97,10 @@ ul.gameseries {
 
 .amiibos figure > div {
   text-align: center;
-  width: 150px;
   height: 150px;
+  width: 100%;
   margin-bottom: 2rem;
+  background: linear-gradient(rgba(255, 105, 105, 0.7), rgba(255, 27, 156, 0.7));
 }
 
 .amiibos img {
@@ -107,14 +109,26 @@ ul.gameseries {
 }
 
 .amiibos figure {
+  background: rgba(255, 255, 255, 0.331);
+  font-size: 0.9rem;
   height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid 1px white;
-  padding: 1rem;
+  padding: 1rem 0.8rem;
 }
+
+.amiibos figcaption {
+  line-height: 1.3;
+  padding: 0.8rem;
+  background: linear-gradient(rgba(255, 105, 105, 0.7), rgba(255, 27, 156, 0.7));
+}
+.amiibos figcaption span{
+  text-decoration: underline;
+}
+
 
 .amiibos figure ul {
   list-style: none;
@@ -136,4 +150,18 @@ ul.gameseries {
 .amiibos.show + .close:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+
+.release-title {
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  /* text-align: center; */
+}
+
+.release-dates {
+  font-size: 0.8rem;
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
 }
