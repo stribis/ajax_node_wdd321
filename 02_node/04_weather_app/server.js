@@ -12,7 +12,8 @@ app.set('view engine', 'ejs')
 
 app.get('/', (req, res)=> {
   res.render('index.ejs', {
-    data: null
+    data: null,
+    errors: null
   })
 })
 
@@ -26,12 +27,20 @@ app.post('/', (req, res)=> {
     if ( err ) {
       // There was a connection error with the API
       console.log(err)
+      res.render('index.ejs', {
+        data: null,
+        errors: 'There was a connection error with the API'
+      })
     } else {
       const weatherData = JSON.parse(body)
       console.log(weatherData)
       if (weatherData.cod == '404') {
-        // The city was not found int he API
+        // The city was not found in the API
         console.log('City was not found in the API')
+        res.render('index.ejs', {
+          data: null,
+          errors: 'The city was not found in the API'
+        })
       } else {
         // Everything went well :)
         console.log(weatherData)
@@ -42,7 +51,8 @@ app.post('/', (req, res)=> {
           feels: weatherData.main.feels_like
         }
         res.render('index.ejs', {
-          data : data
+          data : data,
+          errors: null
         })
       }
     }

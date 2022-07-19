@@ -15,10 +15,15 @@
     </form>
     
     <% if ( data != null ) { %>
-      <div class="display"><%= data.temp %></div>
-      <img src="http://openweathermap.org/img/wn/<%=data.icon%>@2x.png" alt="<%= data.description %>">
+      <div class="display"><%= data.temp %>°C</div>
+      <p class="feels">Feels like <%= data.feels %>°C</p>
+      <img class="icon" src="http://openweathermap.org/img/wn/<%=data.icon%>@2x.png" alt="<%= data.description %>">
       <p class="description"><%= data.description %></p>
     <%} %>
+
+    <% if ( errors != null ){ %>
+      <p class="description"><%= errors %></p>
+    <% } %>
     
 
   </div>

@@ -61,3 +61,25 @@ input[type="submit"] {
   font-size: 1.4rem;
   color: #555;
 }
+
+.display {
+  font-size: 3rem;
+  margin: 2rem auto;
+  color: #555;
+}
+
+.icon {
+  max-width: 190px;
+  display: block;
+  margin: 0 auto;
+}
+
+.feels {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.description {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
