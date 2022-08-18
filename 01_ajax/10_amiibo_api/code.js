@@ -74,16 +74,18 @@ function showAmiibos (data) {
       </div>
       <figcaption>
         <ul>
-          <li>Name: <span>${amiibo.character}</span></li>
-          <li>Game Series: <span>${amiibo.gameSeries}</span></li>
-          <li>Amiibo Series: <span>${amiibo.amiiboSeries}</span></li>
-          <li>Amiibo Type: <span>${amiibo.type}</span></li>
+          <li><span>Name:</span> ${amiibo.character}</li>
+          <li><span>Game Series:</span> ${amiibo.gameSeries}</li>
+          <li><span>Amiibo Series:</span> ${amiibo.amiiboSeries}</li>
+          <li><span>Amiibo Type:</span> ${amiibo.type}</li>
         </ul>
-        <p class="release-title">Release Dates:</p>
-        <ul class="release-dates"><li>au: ${amiibo.release.au ? amiibo.release.au : 'N/A'}</li>
-        <li>eu: ${amiibo.release.eu ? amiibo.release.eu : 'N/A'}</li>
-        <li>jp: ${amiibo.release.jp ? amiibo.release.jp : 'N/A'}</li>
-        <li>na: ${amiibo.release.na ? amiibo.release.na : 'N/A'}</li></p>
+        <p class="release-title"> Release Dates:</p>
+        <ul class="release-dates">
+          <li title="Australia"><i class="fa-solid fa-earth-oceania"></i>: ${amiibo.release.au ? amiibo.release.au : 'N/A'}</li>
+          <li title="Europe"><i class="fa-solid fa-earth-europe"></i>: ${amiibo.release.eu ? amiibo.release.eu : 'N/A'}</li>
+          <li title="Japan"><i class="fa-solid fa-earth-asia"></i>: ${amiibo.release.jp ? amiibo.release.jp : 'N/A'}</li>
+          <li title="North America"><i class="fa-solid fa-earth-americas"></i>: ${amiibo.release.na ? amiibo.release.na : 'N/A'}</li>
+        </ul>
       </figcaption>
     </figure>
     `
